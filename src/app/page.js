@@ -83,8 +83,8 @@ export default function Home() {
     const shouldShowLetter = isGameLost || guessedLetters.includes(el);
 
     const className = clsx({
-      "green-letters": isGameOver && guessedLetters.includes(el),
-      "red-letters": isGameOver && !guessedLetters.includes(el),
+      "green-letters": (isGameOver && guessedLetters.includes(el)),
+      "red-letters": (isGameOver && !guessedLetters.includes(el)),
     });
 
     return (
