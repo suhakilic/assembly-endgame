@@ -11,7 +11,7 @@ export default function Home() {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
   // React States
-  const [word, setWord] = React.useState(getRandomWord);
+  const [word, setWord] = React.useState(()=>getRandomWord());
   const [guessedLetters, setGuessedLetters] = React.useState([]);
 
   // Some Status Of The Game
@@ -24,7 +24,7 @@ export default function Home() {
 
   // newGame
   function newGame() {
-    setWord(getRandomWord());
+    setWord(() => getRandomWord());
     setGuessedLetters([]);
   }
 
@@ -80,7 +80,7 @@ export default function Home() {
   });
 
   // Given Word
-  const wordElement = word.split("").map((el) => {
+  const wordElement = word.split("").map((el,index) => {
     const shouldShowLetter = isGameLost || guessedLetters.includes(el);
 
     const className = clsx({
@@ -89,7 +89,7 @@ export default function Home() {
     });
 
     return (
-      <span className={className} key={el}>
+      <span className={className} key={index}>
         {shouldShowLetter ? el.toUpperCase() : ""}
       </span>
     );
