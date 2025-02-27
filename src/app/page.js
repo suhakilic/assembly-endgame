@@ -3,6 +3,7 @@ import { languages } from "./languages";
 import React from "react";
 import clsx from "clsx";
 import Confetti from 'react-confetti'
+import { getRandomWord } from "./word";
 
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
   // React States
-  const [word, setWord] = React.useState("react");
+  const [word, setWord] = React.useState(getRandomWord);
   const [guessedLetters, setGuessedLetters] = React.useState([]);
 
   // Some Status Of The Game
@@ -106,6 +107,7 @@ export default function Home() {
 
     return (
       <button
+        disabled = {isGameOver}
         key={el}
         className={className}
         onClick={() => handleKeyboardClick(el)}
