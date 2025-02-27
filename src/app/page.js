@@ -24,7 +24,7 @@ export default function Home() {
 
   // newGame
   function newGame() {
-    setWord("react");
+    setWord(getRandomWord());
     setGuessedLetters([]);
   }
 
