@@ -46,7 +46,7 @@ export default function Home() {
       return (
         <>
           <h1>You lost!</h1>
-          <p>Don't give up.</p>
+          <p>Do not give up.</p>
         </>
       );
     } else {
