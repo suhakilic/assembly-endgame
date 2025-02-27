@@ -39,14 +39,14 @@ export default function Home() {
     if (isGameWon) {
       return (
         <>
-          <h1>You won!</h1>
+          <h2>You won!</h2>
           <p>Well done.</p>
         </>
       );
     } else if (isGameLost) {
       return (
         <>
-          <h1>You lost!</h1>
+          <h2>You lost!</h2>
           <p>Do not give up.</p>
         </>
       );
